@@ -6,14 +6,22 @@ import org.apache.http.HttpStatus;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author sureshk
+ *
+ */
 @Controller
 public class ErrorPageHandler implements ErrorController {
 
 	private static final String PATH = "/error";
 
+	/**
+	 * @param request
+	 * @return
+	 * Dec 25, 2019
+	 *4:57:10 PM
+	 */
 	@RequestMapping(value = PATH)
 	public String handleError(HttpServletRequest request) {
 		Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
